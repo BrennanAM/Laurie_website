@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meet Dr. Laurie Moroco - Business & Career Coach</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --ink:#2c3e50;
+      --sub:#4a90a4;
+      --sub2:#8bbbc3;
+      --bg1:#f0f8ff;
+      --bg2:#e6f3f7;
+      --bg3:#ddeef2;
+    }
+    body{
+      font-family: Georgia, "Times New Roman", serif;
+      line-height:1.6;color:var(--ink);overflow-x:hidden;
+      background:#fff;
+    }
+
+    /* ====== NAV ====== */
+    nav{
+      position:fixed;top:0;width:100%;
+      background:rgba(255,255,255,.95);
+      backdrop-filter:blur(10px);
+      z-index:1000;padding:1rem 0;border-bottom:1px solid rgba(139,187,195,.2);
+      transition:all .3s ease;
+    }
+    .nav-container{
+      max-width:1200px;margin:0 auto;
+      display:flex;justify-content:space-between;align-items:center;
+      padding:0 2rem;
+    }
+    .brand{
+      display:flex;align-items:center;gap:.65rem;text-decoration:none;
+      color:var(--sub)
+    }
+    .brand .brand-text{
+      font-weight:700;font-size:1.1rem;letter-spacing:.2px
+    }
+    .brand .brand-mark{
+      width:28px;height:28px;border-radius:50%;
+      display:grid;place-items:center;border:2px solid var(--sub)
+    }
+    .nav-links{display:flex;list-style:none;gap:2rem}
+    .nav-links a{
+      text-decoration:none;color:var(--ink);font-weight:500;position:relative;
+      font-size:.95rem;letter-spacing:.5px;transition:color .25s ease;
+    }
+    .nav-links a:hover,.nav-links a.active{color:var(--sub)}
+    .nav-links a::after{
+      content:"";position:absolute;left:0;bottom:-5px;height:2px;width:0;
+      background:linear-gradient(90deg,var(--sub),var(--sub2));
+      transition:width .25s ease;
+    }
+    .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+
+    /* Hamburger Menu */
+    .hamburger{
+      display:none;flex-direction:column;cursor:pointer;padding:5px;
+    }
+    .hamburger span{
+      width:25px;height:3px;background:var(--sub);margin:3px 0;transition:0.3s;
+    }
+    .hamburger.active span:nth-child(1){
+      transform:rotate(-45deg) translate(-5px, 6px);
+    }
+    .hamburger.active span:nth-child(2){
+      opacity:0;
+    }
+    .hamburger.active span:nth-child(3){
+      transform:rotate(45deg) translate(-5px, -6px);
+    }
+
+    /* ====== HEADER ====== */
+    .header-section{
+      min-height:60vh;
+      background:linear-gradient(135deg,var(--bg1) 0%,var(--bg2) 50%,var(--bg3) 100%);
+      display:flex;align-items:center;justify-content:center;text-align:center;
+      padding:8rem 2rem 4rem;position:relative;overflow:hidden;
+    }
+    .header-section::before{
+      content:"";position:absolute;top:-50%;right:-20%;width:100%;height:200%;
+      background:radial-gradient(circle, rgba(74,144,164,.08) 0%, transparent 70%);
+      animation:float 20s ease-in-out infinite;
+    }
+    @keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-20px) rotate(5deg)}}
+    .header-content{position:relative;z-index:2;max-width:800px;margin:auto}
+
+    /* Badge that frames the transparent logo */
+.logo-badge img {
+  width: 200px;   /* or whatever size looks best */
+  height: auto;
+}
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4a90a4;
+            font-family: 'Georgia', serif;
+        }
+
+    .header-content h1{
+      font-size:3rem;color:var(--ink);margin-bottom:1rem;font-weight:400;letter-spacing:1px;font-style:italic;
+    }
+    .header-subtitle{font-size:1.25rem;color:var(--sub);margin-bottom:.5rem}
+
+    /* ====== MAIN ====== */
+    .main-content{max-width:1200px;margin:0 auto;padding:4rem 2rem}
+    .content-grid{
+      display:grid;grid-template-columns:1fr 1.5fr;gap:4rem;align-items:start;
+    }
+
+    /* Sticky profile image */
+    .profile-section{position:sticky;top:8rem}
+    .profile-image{
+      width:100%;border-radius:25px;box-shadow:0 20px 40px rgba(74,144,164,.15);
+      transition:transform .3s ease;
+    }
+    .profile-image:hover{transform:scale(1.02)}
+
+    .content-section{margin-bottom:4rem}
+    .section-title{
+      font-size:2rem;color:var(--ink);margin-bottom:1.5rem;font-weight:400;position:relative;display:inline-block;
+    }
+    .section-title::after{
+      content:"";position:absolute;bottom:-8px;left:0;width:60px;height:3px;
+      background:linear-gradient(90deg,var(--sub),var(--sub2));border-radius:2px;
+    }
+    .content-text{color:#5a6c7d;font-size:1.1rem;line-height:1.8;margin-bottom:1.5rem}
+    .content-text p{margin-bottom:1.5rem}
+
+    /* ====== TESTIMONIALS ====== */
+    .testimonials-section{
+      background:linear-gradient(135deg,#fdfefe 0%,#f7fcfd 100%);
+      padding:4rem 2rem;border-radius:30px;margin:4rem 0;
+    }
+    .testimonials-title{
+      text-align:center;font-size:2.5rem;color:var(--ink);margin-bottom:3rem;font-weight:400;position:relative;display:inline-block;width:100%;
+    }
+    .testimonials-title::after{
+      content:"";position:absolute;bottom:-15px;left:50%;transform:translateX(-50%);
+      width:80px;height:3px;background:linear-gradient(90deg,var(--sub),var(--sub2));border-radius:2px;
+    }
+    .testimonials-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:2.5rem;
+    }
+    .testimonial-card{
+      background:#fff;padding:2.5rem;border-radius:20px;box-shadow:0 10px 30px rgba(74,144,164,.08);
+      position:relative;transition:all .4s ease;border-left:4px solid transparent;background-clip:padding-box;
+    }
+    .testimonial-card::before{
+      content:"";position:absolute;inset:0;border-radius:20px;
+      background:linear-gradient(145deg,transparent,rgba(139,187,195,.05));opacity:0;transition:opacity .4s ease;
+    }
+    .testimonial-card:hover::before{opacity:1}
+    .testimonial-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(74,144,164,.15);border-left-color:var(--sub)}
+    .testimonial-quote{font-size:1.1rem;color:var(--ink);line-height:1.7;margin-bottom:1.5rem;font-style:italic}
+    .testimonial-author{color:var(--sub);font-weight:600;font-size:1rem;text-align:right}
+
+    /* ====== FEATURED ====== */
+    .featured-section{text-align:center;padding:4rem 0}
+    .featured-title{
+      font-size:2rem;color:var(--ink);margin-bottom:2rem;font-weight:400;text-transform:uppercase;letter-spacing:2px
+    }
+    .featured-publications{font-size:1.2rem;color:var(--sub);font-weight:500;letter-spacing:1px}
+
+    /* ====== SOCIAL ====== */
+    .social-section{text-align:center;padding:3rem 0}
+    .social-links{display:flex;justify-content:center;gap:1.5rem}
+    .social-links a{
+      width:50px;height:50px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;text-decoration:none;color:#fff;
+      background:linear-gradient(135deg, rgba(74,144,164,.85), rgba(139,187,195,.85));
+      transition:all .3s ease;font-size:1.2rem;
+      box-shadow:0 0 0 0 rgba(74,144,164,0);
+    }
+    .social-links a:hover{
+      background:linear-gradient(135deg,var(--sub),var(--sub2));
+      transform:translateY(-3px) scale(1.1);
+      box-shadow:0 8px 20px rgba(74,144,164,.4);
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 900px){
+      .logo-badge{width:120px;height:120px}
+    }
+    @media (max-width: 768px){
+      .hamburger{display:flex}
+      
+      .nav-links{
+        position:fixed;left:-100%;top:70px;flex-direction:column;
+        background-color:rgba(255,255,255,.98);width:100%;text-align:center;
+        transition:0.3s;box-shadow:0 10px 27px rgba(0,0,0,.05);
+        backdrop-filter:blur(10px);padding:2rem 0;
+      }
+      .nav-links.active{left:0}
+      .nav-links li{margin:1.5rem 0}
+      .nav-links a{font-size:1.1rem}
+      
+      .header-section{padding:6rem 2rem 3rem;min-height:50vh}
+      .header-content{margin-top:1rem}
+      .header-content h1{font-size:1.8rem;margin-top:1rem}
+      .logo-badge{margin-bottom:1.5rem}
+      .logo-badge img{width:120px}
+      
+      .content-grid{grid-template-columns:1fr;gap:2rem}
+      .profile-section{position:static;order:-1}
+      .testimonials-grid{grid-template-columns:1fr}
+      .testimonial-card{padding:2rem}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Dr. Laurie Moroco</div>
+            <div class="hamburger" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="https://lauriemoroco.com/">HOME</a></li>
+                <li><a href="https://lauriemoroco.com/meetme.html">MEET DR. MOROCO</a></li>
+                <li><a href="https://lauriemoroco.com/services.html">SERVICES</a></li>
+                <li><a href="https://site.lauriemoroco.com/blog">BLOG</a></li>
+                <li><a href="https://site.lauriemoroco.com/press">PRESS</a></li>
+                <li><a href="https://site.lauriemoroco.com/contact">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+  <!-- HEADER -->
+  <section id="meet" class="header-section">
+    <div class="header-content">
+      <!-- Perfect-circle frame that showcases the transparent logo -->
+      <div class="logo-badge">
+        <!-- 🔁 Replace with your transparent PNG/SVG file -->
+        <img src="logo-1756267103807.png" alt="Dr. Laurie Moroco Logo">
+      </div>
+
+      <h1>Meet Laurie</h1>
+      <div class="header-subtitle">Certified Business &amp; Career Coach</div>
+      <div class="header-subtitle">Executive Leadership Trainer</div>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <div class="content-grid">
+      <!-- Profile Image -->
+      <aside class="profile-section">
+        <!-- 🔁 Replace with your actual photo -->
+        <img src="lauriecouch.webp" alt="Dr. Laurie Moroco" class="profile-image">
+      </aside>
+
+      <!-- Content -->
+      <section class="content-details">
+        <!-- What I Do -->
+        <div class="content-section">
+          <h2 class="section-title">WHAT I DO</h2>
+          <div class="content-text">
+            <p>My executive coaching techniques are designed to empower and outfit you with the tools you need to say what you mean and get what you want.</p>
+            <p>Additionally, I offer engaging and interactive leadership development programs tailored for team leaders to enhance their skills and drive success.</p>
+          </div>
+        </div>
+
+        <!-- Who I Am -->
+        <div class="content-section">
+          <h2 class="section-title">WHO I AM</h2>
+          <div class="content-text">
+            <p>Dr. Laurie Moroco has always been an advocate of competent and effective communication, which she believes equips people with tools for successful personal and professional relationships. She obtained a BA in Communication and Public Relations, an MA in Corporate Communication, and a PhD in Interpersonal Communication and Ethics from Duquesne University.</p>
+            <p>Being a lifelong learner, she dove into higher education and became a full-time tenured faculty member and served as the Executive Director and Director of Development. She found success in consulting and was instrumental in building a media center on campus. She is now an Assistant Dean of Instruction at a college in Colorado, a professor, a certified master business strategist, a corporate leadership trainer, and a working mom of four children.</p>
+            <p>Always believing in combining theory with action, Dr. Moroco has entrepreneurial roots and started her own business called Haute Cookies. She is a solopreneur who achieved success when her chocolate-covered hand-made treats appeared on the Rachael Ray Show and at the Republican National Convention. Her businesses have been featured on MSN and Working Mother.</p>
+            <p>She wanted it all: a family, an educator, a published author, and a female business owner—and through hard work and perseverance, she got it all. Laurie is passionate about mentoring other entrepreneurs and encouraging them to ELEVATE their success to the next level.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <h2 class="testimonials-title">REAL RESULTS</h2>
+    <div class="testimonials-grid">
+      <article class="testimonial-card">
+        <div class="testimonial-quote">
+          The job coaching, brainstorming, and overall atmosphere you created yesterday left me so energized! I am putting time and energy into figuring out what's next for me. Your session was exactly the jumpstart I needed!
+        </div>
+        <div class="testimonial-author">— Christine C.</div>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="testimonial-quote">
+          Laurie is a joy to work with! Her thoughtful, organized, and fun approach helped me quickly turn ideas into a dynamic elevator pitch. I highly recommend working with Laurie!
+        </div>
+        <div class="testimonial-author">— Diana, Big Brothers Big Sisters</div>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="testimonial-quote">
+          Dr. Moroco helped a room full of leaders become more confident public speakers. One of the best-evaluated sessions we've ever had!
+        </div>
+        <div class="testimonial-author">— Rob D., Breckenridge Grand Vacations</div>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="testimonial-quote">
+          Laurie is an excellent communicator. She respects other people's input and time.
+        </div>
+        <div class="testimonial-author">— Anonymous Client</div>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="testimonial-quote">
+          She helped me clearly see the shortcomings I must work on, as well as the possible shortcomings of the other person I'm working with.
+        </div>
+        <div class="testimonial-author">— Anonymous Client</div>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="testimonial-quote">
+          Laurie was truly amazing and more than helpful beyond words. I feel able to move forward; my stress was reduced on the first day of class, and on day two I felt lighter—like a load had been lifted off my shoulders.
+        </div>
+        <div class="testimonial-author">— Anonymous Client</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- FEATURED -->
+  <section class="featured-section">
+    <h2 class="featured-title">Featured In:</h2>
+    <div class="featured-publications">
+      THE AMERICAN REPORTER, AUTHORITY MAGAZINE, HR.COM
+    </div>
+  </section>
+
+  <!-- SOCIAL -->
+  <section id="contact" class="social-section">
+    <div class="social-links">
+      <a href="#" title="Facebook" aria-label="Facebook">📘</a>
+      <a href="https://www.instagram.com/ljmcoaching.phd/?hl=en" title="Instagram">📷</a>
+      <a href="https://www.linkedin.com/company/laurie-moroco/" title="LinkedIn">💼</a>
+    </div>
+  </section>
+<script>
+// Mobile menu toggle function
+function toggleMobileMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  const hamburger = document.querySelector('.hamburger');
+  
+  navLinks.classList.toggle('active');
+  hamburger.classList.toggle('active');
+}
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    const navLinks = document.querySelector('.nav-links');
+    const hamburger = document.querySelector('.hamburger');
+    navLinks.classList.remove('active');
+    hamburger.classList.remove('active');
+  });
+});
+
+// Navbar background on scroll
+window.addEventListener('scroll', function() {
+  const nav = document.querySelector('nav');
+  if (window.scrollY > 100) {
+    nav.style.background = 'rgba(255, 255, 255, 0.98)';
+    nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+  } else {
+    nav.style.background = 'rgba(255, 255, 255, 0.95)';
+    nav.style.boxShadow = 'none';
+  }
+});
+</script>
+
+</body>
+</html>

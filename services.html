@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Dr. Laurie Moroco</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            overflow-x: hidden;
+            background: #fdfdfd;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(139, 187, 195, 0.15);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #4a90a4;
+            font-family: 'Georgia', serif;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #4a90a4;
+            transform: translateY(-1px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -8px;
+            left: 50%;
+            background: linear-gradient(90deg, #4a90a4, #8bbbc3);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+            border-radius: 1px;
+        }
+
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #4a90a4;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Header Section */
+        .header-section {
+            min-height: 50vh;
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3f7 30%, #ddeef2 70%, #d4e9ee 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-section::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -15%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(ellipse, rgba(74, 144, 164, 0.08) 0%, transparent 70%);
+            animation: gentleFloat 25s ease-in-out infinite;
+            transform-origin: center;
+        }
+
+        .header-section::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -15%;
+            width: 60%;
+            height: 120%;
+            background: radial-gradient(ellipse, rgba(139, 187, 195, 0.06) 0%, transparent 70%);
+            animation: gentleFloat 30s ease-in-out infinite reverse;
+        }
+
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+            33% { transform: translateY(-15px) rotate(2deg) scale(1.02); }
+            66% { transform: translateY(10px) rotate(-1deg) scale(0.98); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 3;
+            max-width: 900px;
+        }
+
+    @media (max-width: 900px){
+      .logo-badge{width:120px;height:120px}
+    }
+
+        .logo-image:hover {
+            transform: translateY(-5px) scale(1.02);
+        }
+
+        .logo-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .header-subtitle {
+            font-size: 1.4rem;
+            color: #4a90a4;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .header-divider {
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        .header-divider h1 {
+            font-size: 3.5rem;
+            color: #2c3e50;
+            font-weight: 300;
+            letter-spacing: 2px;
+            font-style: italic;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(74, 144, 164, 0.1);
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 8rem;
+        }
+
+        /* Enhanced Two Column Service Layout */
+        .services-intro {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .services-intro h2 {
+            font-size: 2.8rem;
+            color: #2c3e50;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .services-intro p {
+            font-size: 1.2rem;
+            color: #5a6c7d;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            margin-bottom: 4rem;
+        }
+
+        .service-item {
+            background: white;
+            border-radius: 30px;
+            padding: 0;
+            box-shadow: 0 20px 50px rgba(74, 144, 164, 0.08), 0 5px 20px rgba(74, 144, 164, 0.04);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(139, 187, 195, 0.1);
+        }
+
+        .service-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #4a90a4, #8bbbc3, #4a90a4);
+            background-size: 200% 100%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 200% 0; }
+            50% { background-position: -200% 0; }
+        }
+
+        .service-item:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 70px rgba(74, 144, 164, 0.15), 0 10px 30px rgba(74, 144, 164, 0.08);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            transition: transform 0.5s ease;
+        }
+
+        .service-item:hover .service-image img {
+            transform: scale(1.05);
+        }
+
+        .service-content {
+            padding: 2.5rem;
+        }
+
+        .service-label {
+            font-size: 0.85rem;
+            color: #4a90a4;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-label::before {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background: linear-gradient(90deg, #4a90a4, #8bbbc3);
+            margin-right: 10px;
+            border-radius: 1px;
+        }
+
+        .service-description {
+            color: #5a6c7d;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+
+        .service-subheading {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .pillars-list, .benefits-list {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .pillars-list li, .benefits-list li {
+            color: #5a6c7d;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 2rem;
+            font-weight: 500;
+            line-height: 1.7;
+        }
+
+        .pillars-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(135deg, #4a90a4, #8bbbc3);
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(74, 144, 164, 0.3);
+        }
+
+        .benefits-list li::before {
+            content: '✓';
+            color: #4a90a4;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.1rem;
+        }
+
+        .benefits-list strong {
+            color: #2c3e50;
+        }
+
+        /* Modern Section Dividers */
+        .section-divider {
+            text-align: center;
+            margin: 8rem 0 6rem;
+            position: relative;
+        }
+
+        .section-divider h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-divider::after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #4a90a4, transparent);
+        }
+
+        /* Corporate Training - More Creative */
+        .corporate-section {
+            background: linear-gradient(135deg, #f8fbff 0%, #f0f8ff 30%, #e8f4f8 100%);
+            padding: 5rem;
+            border-radius: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin: 4rem 0;
+        }
+
+        .corporate-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(74, 144, 164, 0.03) 0%, transparent 70%);
+            animation: rotate 40s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .video-container {
+            max-width: 700px;
+            margin: 2rem auto;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(74, 144, 164, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, #4a90a4 0%, #6ba4b8 50%, #8bbbc3 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            position: relative;
+        }
+
+        .play-button {
+            width: 90px;
+            height: 90px;
+            background: #dc2626;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.2rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.4);
+            position: relative;
+        }
+
+        .play-button::before {
+            content: '';
+            position: absolute;
+            inset: -10px;
+            border-radius: 50%;
+            background: rgba(220, 38, 38, 0.2);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.1); opacity: 0.3; }
+        }
+
+        .play-button:hover {
+            transform: scale(1.15);
+            box-shadow: 0 15px 40px rgba(220, 38, 38, 0.5);
+        }
+
+        /* Streamlined Workshops */
+        .workshops-section {
+            background: linear-gradient(135deg, #fdfdfd 0%, #f8fbff 100%);
+            padding: 5rem 0;
+            border-radius: 40px;
+            margin: 4rem 0;
+        }
+
+        .workshops-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 0 2rem;
+        }
+
+        .workshops-note {
+            color: #8bbbc3;
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 4rem;
+            background: rgba(139, 187, 195, 0.1);
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #8bbbc3;
+        }
+
+        .workshops-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            padding: 0 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .workshops-grid .workshop-card:nth-child(3) {
+            grid-column: 1 / -1;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .workshop-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(74, 144, 164, 0.08);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(139, 187, 195, 0.1);
+        }
+
+        .workshop-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(74, 144, 164, 0.15);
+        }
+
+        .workshop-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3f7 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .workshop-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .workshop-card:hover .workshop-image img {
+            transform: scale(1.08);
+        }
+
+        .workshop-content {
+            padding: 2.5rem;
+        }
+
+        .workshop-title {
+            font-size: 1.35rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            line-height: 1.3;
+        }
+
+        .workshop-description {
+            color: #5a6c7d;
+            line-height: 1.8;
+            font-size: 1.02rem;
+        }
+
+        /* Enhanced College Essay Section */
+        .essay-section {
+            background: linear-gradient(135deg, #fdfefe 0%, #f7fcfd 50%, #f0f9fb 100%);
+            padding: 6rem 3rem;
+            border-radius: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .essay-section::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 40%;
+            height: 140%;
+            background: radial-gradient(ellipse, rgba(74, 144, 164, 0.04) 0%, transparent 70%);
+            animation: gentleFloat 35s ease-in-out infinite;
+        }
+
+        .essay-tagline {
+            text-align: center;
+            font-size: 1.6rem;
+            color: #4a90a4;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .essay-tagline::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #4a90a4, #8bbbc3);
+            border-radius: 2px;
+        }
+
+        .essay-intro {
+            text-align: center;
+            color: #5a6c7d;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .essay-packages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin: 4rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .package-card {
+            background: white;
+            border-radius: 25px;
+            padding: 0;
+            box-shadow: 0 20px 50px rgba(74, 144, 164, 0.08);
+            transition: all 0.5s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(139, 187, 195, 0.1);
+        }
+
+        .package-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4a90a4, #8bbbc3);
+        }
+
+        .package-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 70px rgba(74, 144, 164, 0.15);
+        }
+
+        .package-image {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3f7 100%);
+        }
+
+        .package-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .package-card:hover .package-image img {
+            transform: scale(1.05);
+        }
+
+        .package-info {
+            padding: 2.5rem;
+        }
+
+        .package-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .package-subtitle {
+            color: #8bbbc3;
+            font-style: italic;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 2.5rem;
+            text-align: left;
+        }
+
+        .package-features li {
+            color: #5a6c7d;
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 2rem;
+            line-height: 1.7;
+        }
+
+        .package-features li::before {
+            content: '✓';
+            color: #4a90a4;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.2rem;
+        }
+
+        .package-price {
+            font-size: 2.2rem;
+            color: #4a90a4;
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+
+        .book-button {
+            background: linear-gradient(135deg, #4a90a4 0%, #8bbbc3 100%);
+            color: white;
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 25px rgba(74, 144, 164, 0.3);
+        }
+
+        .book-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(74, 144, 164, 0.4);
+        }
+
+        /* Multi-School Add-on - More Integrated */
+        .addon-section {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 3.5rem;
+            border-radius: 25px;
+            margin: 4rem 0;
+            box-shadow: 0 15px 40px rgba(74, 144, 164, 0.06);
+            text-align: center;
+            border: 1px solid rgba(139, 187, 195, 0.15);
+        }
+
+        .addon-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #4a90a4 0%, #8bbbc3 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 0 auto 2rem;
+            box-shadow: 0 10px 30px rgba(74, 144, 164, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .addon-icon:hover {
+            transform: rotate(180deg) scale(1.1);
+        }
+
+        .addon-title {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .addon-subtitle {
+            color: #8bbbc3;
+            font-style: italic;
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .addon-features {
+            list-style: none;
+            margin-bottom: 1rem;
+            text-align: left;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .addon-features li {
+            color: #5a6c7d;
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 2rem;
+            line-height: 1.7;
+        }
+
+        .addon-features li::before {
+            content: '●';
+            color: #4a90a4;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        /* Enhanced CTA */
+        .cta-section {
+            background: linear-gradient(135deg, #4a90a4 0%, #6ba4b8 50%, #8bbbc3 100%);
+            color: white;
+            padding: 5rem 2rem;
+            border-radius: 40px;
+            text-align: center;
+            margin: 6rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            animation: rotate 60s linear infinite;
+        }
+
+        .cta-title {
+            font-size: 2.3rem;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            line-height: 1.4;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.95);
+            color: #4a90a4;
+            padding: 1.5rem 4rem;
+            border: none;
+            border-radius: 35px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 2;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.3);
+            background: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: rgba(255, 255, 255, 0.98);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                backdrop-filter: blur(10px);
+                padding: 2rem 0;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 1.5rem 0;
+            }
+
+            .nav-links a {
+                font-size: 1.1rem;
+            }
+
+            .header-section {
+                padding: 6rem 1rem 3rem;
+                min-height: 50vh;
+            }
+
+            .header-content {
+                margin-top: 1rem;
+            }
+
+            .logo-badge {
+                margin-bottom: 1.5rem;
+            }
+
+            .logo-badge img {
+                width: 120px;
+            }
+
+            .header-subtitle {
+                font-size: 1.2rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .header-divider {
+                margin: 2rem 0;
+            }
+
+            .header-divider h1 {
+                font-size: 2rem;
+                margin-top: 1rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
+            .workshops-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+            }
+
+            .essay-packages {
+                grid-template-columns: 1fr;
+            }
+
+            .section-divider h2 {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+
+            .corporate-section, .essay-section {
+                padding: 3rem 2rem;
+            }
+
+            .main-content {
+                padding: 4rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Dr. Laurie Moroco</div>
+            <div class="hamburger" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="https://lauriemoroco.com/">HOME</a></li>
+                <li><a href="https://lauriemoroco.com/meetme.html">MEET DR. MOROCO</a></li>
+                <li><a href="https://lauriemoroco.com/services.html">SERVICES</a></li>
+                <li><a href="https://site.lauriemoroco.com/blog">BLOG</a></li>
+                <li><a href="https://site.lauriemoroco.com/press">PRESS</a></li>
+                <li><a href="https://site.lauriemoroco.com/contact">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="header-section">
+        <div class="header-content">
+            <div class="logo-badge">
+                <img src="logo-1756267103807.png" alt="Dr. Laurie Moroco Logo">
+            </div>
+            <div class="header-subtitle">Certified Business & Career Coach</div>
+            <div class="header-subtitle">Executive Leadership Trainer</div>
+            <div class="header-divider">
+                <h1>Achieve your goals</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Core Services -->
+        <section class="section">
+            <div class="services-intro">
+                <h2>Transform Your Career Journey</h2>
+                <p>Professional coaching and leadership development designed to unlock your potential and accelerate your success.</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Career Coaching -->
+                <div class="service-item">
+                    <div class="service-image">
+                        <img src="Lamppost.webp" alt="Portrait of Laurie outdoors in hat, leaning on lamppost">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-label">CAREER COACHING</div>
+                        <p class="service-description">Dr. Moroco empowers career-minded businesswomen to be confident and courageous so she can define a roadmap for the life she wants and deserves.</p>
+                        
+                        <h4 class="service-subheading">My 3 vital pillars for success:</h4>
+                        <ul class="pillars-list">
+                            <li>Confidence</li>
+                            <li>Proactive Roadmap</li>
+                            <li>Accountability</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Leadership Development -->
+                <div class="service-item">
+                    <div class="service-image">
+                        <img src="lauriewhitewall.webp" alt="Studio portrait of Laurie in black blazer against white brick wall">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-label">LEADERSHIP DEVELOPMENT</div>
+                        <p class="service-description">I offer curated, engaging presentations that inspire and empower learners, facilitating their professional growth and development with expertise, charisma, and a commitment to excellence.</p>
+                        
+                        <ul class="benefits-list">
+                            <li><strong>Dynamic, interactive workshops</strong> designed to engage and inspire</li>
+                            <li><strong>25 years of academic and professional expertise,</strong> ensuring impactful and practical learning experiences</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Corporate Training -->
+        <div class="section-divider">
+            <h2>Corporate Training</h2>
+        </div>
+        <section class="section">
+            <div class="corporate-section">
+                <div class="video-container">
+                    <iframe width="100%" height="350" src="https://www.youtube.com/embed/Xs9_SX1TOI4" 
+                            title="Corporate Training Video" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Workshops 2025 -->
+
+                <div class="workshops-grid">
+                    <div class="workshop-card">
+                        <div class="workshop-image">
+                            <img src="cheering.webp" alt="Group of professionals cheering in office">
+                        </div>
+                        <div class="workshop-content">
+                            <h3 class="workshop-title">Communicate Like a Pro</h3>
+                            <p class="workshop-description">Bridge generational gaps, lead with clarity, and manage tough conversations with confidence.<br><br>This engaging workshop equips leaders with practical tools to communicate professionally across age groups and roles, de-escalate conflict with respect, and hold peers and staff accountable without creating drama. Participants will learn how to choose the right tone and platform—whether text, email, or in person—and gain strategies for building trust and professionalism in every interaction.</p>
+                        </div>
+                    </div>
+
+                    <div class="workshop-card">
+                        <div class="workshop-image">
+                            <img src="1v1.webp" alt="Small team in discussion around table">
+                        </div>
+                        <div class="workshop-content">
+                            <h3 class="workshop-title">Win the Relationship: Not the Argument</h3>
+                            <p class="workshop-description"><strong>Learn to work with difficult people</strong><br><br>Respectfully engage in dialogue with the intent to enhance understanding between participants through mutual respect. Appreciate differences constructively through effective communication and best practices. Have discussions with people who have different beliefs than you through civil discourse.</p>
+                        </div>
+                    </div>
+
+                    <div class="workshop-card">
+                        <div class="workshop-image">
+                            <img src="mind.webp" alt="Speaker silhouette at sunrise with light flares">
+                        </div>
+                        <div class="workshop-content">
+                            <h3 class="workshop-title">From Stage Fright to Spotlight</h3>
+                            <p class="workshop-description">Participants will acquire the skills and confidence needed to deliver effective face-to-face presentations to any audience. This is achieved through a structured process of organization, practice, delivery, and constructive feedback in a supportive and safe environment. With personalized coaching and in-the-moment guidance, participants will build confidence, feel empowered, and establish credibility.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- College Essay Coaching -->
+        <section class="section">
+            <div class="essay-section">
+                <div class="essay-tagline">TAKE THE STRESS OUT OF COLLEGE ESSAYS.</div>
+                <p class="essay-intro">Whether you need a quick edit or full-service support, I offer tailored packages to help students craft standout essays—and get accepted.</p>
+                
+                <div class="essay-packages">
+                    <div class="package-card">
+                        <div class="package-image">
+                            <img src="writing.webp" alt="Hand writing in notebook">
+                        </div>
+                        <div class="package-info">
+                            <h3 class="package-title">Essay Essentials</h3>
+                            <p class="package-subtitle">For students with drafts who just need polish</p>
+                            <ul class="package-features">
+                                <li>6 hours of editing</li>
+                                <li>Grammar, structure, and clarity suggestions</li>
+                                <li>Two full rounds of revision</li>
+                            </ul>
+                            <div class="package-price">$900</div>
+                        </div>
+                    </div>
+
+                    <div class="package-card">
+                        <div class="package-image">
+                            <img src="books.webp" alt="Stack of colorful books with flowers">
+                        </div>
+                        <div class="package-info">
+                            <h3 class="package-title">Essay Accelerator</h3>
+                            <p class="package-subtitle">For students who want brainstorming, structure, and feedback</p>
+                            <ul class="package-features">
+                                <li>15 hours of 1:1 support</li>
+                                <li>Topic development + feedback</li>
+                                <li>Two full rounds of revision per essay</li>
+                            </ul>
+                            <div class="package-price">$2,250</div>
+                        </div>
+                    </div>
+
+                    <div class="package-card">
+                        <div class="package-image">
+                            <img src="calendar.webp" alt="Open planner with calendar and notes">
+                        </div>
+                        <div class="package-info">
+                            <h3 class="package-title">The Admit Plan</h3>
+                            <p class="package-subtitle">For families who want expert coaching through every step</p>
+                            <ul class="package-features">
+                                <li>Unlimited support through deadlines (up to 8 schools)</li>
+                                <li>Zoom/in-person sessions</li>
+                                <li>Application strategy + editing</li>
+                            </ul>
+                            <div class="package-price">$4,500</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add-On Section -->
+                <div class="addon-section">
+                    <h3 class="addon-title">MULTI-SCHOOL & COMMON APP SUPPORT</h3>
+                    <p class="addon-subtitle">Add-on help for students applying to multiple schools.</p>
+                    <ul class="addon-features">
+                        <li>Strategy + edits for Common App and supplements</li>
+                        <li>Thematic consistency across schools</li>
+                        <li>$250–$300 per essay (bundle pricing available)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2 class="cta-title">Ready to write something that gets noticed—and gets you in?</h2>
+            <a href="https://site.lauriemoroco.com/contact" class="cta-button">Schedule Your Consultation</a>
+        </div>
+    </div>
+<script>
+// Mobile menu toggle function
+function toggleMobileMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    const hamburger = document.querySelector('.hamburger');
+    
+    navLinks.classList.toggle('active');
+    hamburger.classList.toggle('active');
+}
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        const navLinks = document.querySelector('.nav-links');
+        const hamburger = document.querySelector('.hamburger');
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('active');
+    });
+});
+
+// Navbar background on scroll
+window.addEventListener('scroll', function() {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 100) {
+        nav.style.background = 'rgba(255, 255, 255, 0.98)';
+        nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+    } else {
+        nav.style.background = 'rgba(255, 255, 255, 0.95)';
+        nav.style.boxShadow = 'none';
+    }
+});
+</script>
+
+</body>
+</html>
