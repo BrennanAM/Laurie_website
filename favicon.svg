@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background circle with gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a90a4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8bbbc3;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <circle cx="256" cy="256" r="256" fill="url(#bgGradient)"/>
+
+  <!-- LM Text -->
+  <text x="256" y="340"
+        font-family="Georgia, serif"
+        font-size="280"
+        font-weight="bold"
+        fill="white"
+        text-anchor="middle"
+        letter-spacing="-10">LM</text>
+</svg>
