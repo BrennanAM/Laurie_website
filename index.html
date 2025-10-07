@@ -3,7 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Laurie Moroco - Business & Career Coach</title>
+    <title>Dr. Laurie Moroco - Certified Business & Career Coach | Executive Leadership Trainer</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Dr. Laurie Moroco empowers professional women with executive coaching and leadership training. 25+ years of experience helping you say what you mean and get what you want.">
+    <meta name="keywords" content="business coach, career coach, executive coaching, leadership training, professional development, women in business, communication skills">
+    <meta name="author" content="Dr. Laurie Moroco">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lauriemoroco.com/">
+    <meta property="og:title" content="Dr. Laurie Moroco - Business & Career Coach">
+    <meta property="og:description" content="Executive coaching and leadership training for professional women. Say what you mean and get what you want.">
+    <meta property="og:image" content="https://lauriemoroco.com/LaurieSuit.webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://lauriemoroco.com/">
+    <meta property="twitter:title" content="Dr. Laurie Moroco - Business & Career Coach">
+    <meta property="twitter:description" content="Executive coaching and leadership training for professional women. Say what you mean and get what you want.">
+    <meta property="twitter:image" content="https://lauriemoroco.com/LaurieSuit.webp">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://site.lauriemoroco.com">
     <style>
         * {
             margin: 0;
@@ -13,9 +36,34 @@
 
         body {
             font-family: 'Georgia', 'Times New Roman', serif;
-            line-height: 1.6;
+            line-height: 1.7;
             color: #2c3e50;
             overflow-x: hidden;
+            font-size: 1.0625rem;
+        }
+
+        /* Skip to Content Link - Accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #4a90a4;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            z-index: 10000;
+            border-radius: 0 0 4px 0;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Enhanced Focus States for Accessibility */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid #4a90a4;
+            outline-offset: 2px;
         }
 
         /* Navigation */
@@ -538,6 +586,147 @@
             font-size: 0.95rem;
         }
 
+        /* Social Proof Stats */
+        .stats-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #4a90a4 0%, #8bbbc3 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+
+        .stat-item {
+            padding: 1.5rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #fdfefe 0%, #f7fcfd 100%);
+        }
+
+        .testimonials-title {
+            text-align: center;
+            font-size: 2.8rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            font-family: 'Georgia', serif;
+        }
+
+        .testimonials-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #5a6c7d;
+            margin-bottom: 4rem;
+            font-style: italic;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(74, 144, 164, 0.08);
+            position: relative;
+            transition: all 0.4s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 4rem;
+            color: rgba(74, 144, 164, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(74, 144, 164, 0.15);
+            border-left-color: #4a90a4;
+        }
+
+        .testimonial-text {
+            font-size: 1.05rem;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            color: #4a90a4;
+            font-weight: 600;
+            text-align: right;
+        }
+
+        /* Enhanced Footer */
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .footer-section h4 {
+            color: #8bbbc3;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 2;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: #8bbbc3;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
         /* Animations */
         @keyframes slideInLeft {
             from {
@@ -614,6 +803,9 @@
     </style>
 </head>
 <body>
+    <!-- Skip to Content Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
@@ -636,6 +828,7 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
+        <a id="main-content"></a>
         <div class="hero-container">
             <div class="hero-content">
                 <h1>Certified Business & Career Coach</h1>
@@ -644,7 +837,7 @@
                 <a href="https://site.lauriemoroco.com/contact" class="cta-button">Start Your Journey</a>
             </div>
             <div class="hero-image">
-                <img src="LaurieSuit.webp" alt="Dr. Laurie Moroco - Professional Business Coach">
+                <img src="LaurieSuit.webp" alt="Dr. Laurie Moroco - Professional Business Coach" loading="eager">
             </div>
         </div>
     </section>
@@ -687,7 +880,7 @@
                     <p>After successfully blending 25 years of industry experience, teaching in higher education, and business coaching, Dr. Moroco empowers professional women to be proactive and become confident and courageous so she can define a path for the life she deserves.</p>
                 </div>
                 <div class="experience-image">
-                    <img src="Lauriebook.png" alt="Dr. Moroco working">
+                    <img src="Lauriebook.png" alt="Dr. Moroco working" loading="lazy">
                 </div>
             </div>
         </div>
@@ -705,8 +898,81 @@
 
     </section>
 
+    <!-- Social Proof Stats Section -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-number">25+</span>
+                <span class="stat-label">Years of Experience</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100+</span>
+                <span class="stat-label">Professionals Coached</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">20+</span>
+                <span class="stat-label">Workshops Delivered</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">PhD</span>
+                <span class="stat-label">Certified Expert</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <h2 class="testimonials-title">What Clients Say</h2>
+        <p class="testimonials-subtitle">Real results from real people</p>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">The job coaching, brainstorming, and overall atmosphere you created yesterday left me so energized! I am putting time and energy into figuring out what's next for me. Your session was exactly the jumpstart I needed!</p>
+                <p class="testimonial-author">— Christine C.</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">Laurie is a joy to work with! Her thoughtful, organized, and fun approach helped me quickly turn ideas into a dynamic elevator pitch. I highly recommend working with Laurie!</p>
+                <p class="testimonial-author">— Diana, Big Brothers Big Sisters</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">Dr. Moroco helped a room full of leaders become more confident public speakers. One of the best-evaluated sessions we've ever had!</p>
+                <p class="testimonial-author">— Rob D., Breckenridge Grand Vacations</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Dr. Laurie Moroco</h4>
+                <p>Certified Business & Career Coach</p>
+                <p>Executive Leadership Trainer</p>
+                <p>Empowering professional women to achieve their goals</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="/">Home</a>
+                <a href="/meetme.html">Meet Dr. Moroco</a>
+                <a href="/services.html">Services</a>
+                <a href="https://site.lauriemoroco.com/contact">Contact</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Services</h4>
+                <a href="/services.html#career-coaching">Career Coaching</a>
+                <a href="/services.html#leadership">Leadership Development</a>
+                <a href="/services.html#workshops">Corporate Workshops</a>
+                <a href="/services.html#college-essays">College Essay Coaching</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <p>Ready to elevate your success?</p>
+                <a href="https://site.lauriemoroco.com/contact">Schedule a Consultation</a>
+            </div>
+        </div>
+
         <div class="social-links">
             <a href="https://www.facebook.com/morococoaching/#" title="Facebook" aria-label="Facebook">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -724,7 +990,10 @@
                 </svg>
             </a>
         </div>
-        <p>Copyright © 2025 Laurie Moroco - All Rights Reserved.</p>
+
+        <div class="footer-bottom">
+            <p>Copyright © 2025 Laurie Moroco - All Rights Reserved.</p>
+        </div>
     </footer>
 
     <script>

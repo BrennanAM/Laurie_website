@@ -3,7 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Dr. Laurie Moroco</title>
+    <title>Services - Career Coaching, Leadership Training & College Essay Help | Dr. Laurie Moroco</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Professional career coaching, executive leadership training, corporate workshops, and college essay coaching. Proven results from Dr. Laurie Moroco's 25+ years of experience.">
+    <meta name="keywords" content="career coaching services, leadership training programs, corporate workshops, college essay coaching, communication training, professional development">
+    <meta name="author" content="Dr. Laurie Moroco">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lauriemoroco.com/services.html">
+    <meta property="og:title" content="Professional Coaching Services - Dr. Laurie Moroco">
+    <meta property="og:description" content="Career coaching, leadership development, and college essay support. Transform your career with expert guidance.">
+    <meta property="og:image" content="https://lauriemoroco.com/lauriewhitewall.webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://lauriemoroco.com/services.html">
+    <meta property="twitter:title" content="Professional Coaching Services - Dr. Laurie Moroco">
+    <meta property="twitter:description" content="Career coaching, leadership development, and college essay support.">
+    <meta property="twitter:image" content="https://lauriemoroco.com/lauriewhitewall.webp">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://site.lauriemoroco.com">
+    <link rel="dns-prefetch" href="https://www.youtube.com">
     <style>
         * {
             margin: 0;
@@ -13,10 +37,35 @@
 
         body {
             font-family: 'Georgia', 'Times New Roman', serif;
-            line-height: 1.6;
+            line-height: 1.7;
             color: #2c3e50;
             overflow-x: hidden;
             background: #fdfdfd;
+            font-size: 1.0625rem;
+        }
+
+        /* Skip to Content Link - Accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #4a90a4;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            z-index: 10000;
+            border-radius: 0 0 4px 0;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Enhanced Focus States for Accessibility */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid #4a90a4;
+            outline-offset: 2px;
         }
 
         /* Navigation */
@@ -979,6 +1028,9 @@
     </style>
 </head>
 <body>
+    <!-- Skip to Content Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
@@ -992,8 +1044,8 @@
                 <li><a href="https://lauriemoroco.com/">HOME</a></li>
                 <li><a href="https://lauriemoroco.com/meetme.html">MEET DR. MOROCO</a></li>
                 <li><a href="https://lauriemoroco.com/services.html">SERVICES</a></li>
-                <li><a href="https://site.lauriemoroco.com/blog">BLOG</a></li>
-                <li><a href="https://site.lauriemoroco.com/press">PRESS</a></li>
+                <li><a href="https://lauriemoroco.com/blog.html">BLOG</a></li>
+                <li><a href="https://lauriemoroco.com/press.html">PRESS</a></li>
                 <li><a href="https://site.lauriemoroco.com/contact">CONTACT</a></li>
             </ul>
         </div>
@@ -1001,9 +1053,10 @@
 
     <!-- Header Section -->
     <section class="header-section">
+        <a id="main-content"></a>
         <div class="header-content">
             <div class="logo-badge">
-                <img src="logo-1756267103807.png" alt="Dr. Laurie Moroco Logo">
+                <img src="logo-1756267103807.png" alt="Dr. Laurie Moroco Logo" loading="eager">
             </div>
             <div class="header-subtitle">Certified Business & Career Coach</div>
             <div class="header-subtitle">Executive Leadership Trainer</div>
@@ -1024,9 +1077,9 @@
             
             <div class="services-grid">
                 <!-- Career Coaching -->
-                <div class="service-item">
+                <div class="service-item" id="career-coaching">
                     <div class="service-image">
-                        <img src="Lamppost.webp" alt="Portrait of Laurie outdoors in hat, leaning on lamppost">
+                        <img src="Lamppost.webp" alt="Portrait of Laurie outdoors in hat, leaning on lamppost" loading="eager">
                     </div>
                     <div class="service-content">
                         <div class="service-label">CAREER COACHING</div>
@@ -1042,9 +1095,9 @@
                 </div>
 
                 <!-- Leadership Development -->
-                <div class="service-item">
+                <div class="service-item" id="leadership">
                     <div class="service-image">
-                        <img src="lauriewhitewall.webp" alt="Studio portrait of Laurie in black blazer against white brick wall">
+                        <img src="lauriewhitewall.webp" alt="Studio portrait of Laurie in black blazer against white brick wall" loading="eager">
                     </div>
                     <div class="service-content">
                         <div class="service-label">LEADERSHIP DEVELOPMENT</div>
@@ -1077,11 +1130,12 @@
         </section>
 
         <!-- New Workshops 2025 -->
+        <div id="workshops"></div>
 
                 <div class="workshops-grid">
                     <div class="workshop-card">
                         <div class="workshop-image">
-                            <img src="cheering.webp" alt="Group of professionals cheering in office">
+                            <img src="cheering.webp" alt="Group of professionals cheering in office" loading="lazy">
                         </div>
                         <div class="workshop-content">
                             <h3 class="workshop-title">Communicate Like a Pro</h3>
@@ -1091,7 +1145,7 @@
 
                     <div class="workshop-card">
                         <div class="workshop-image">
-                            <img src="1v1.webp" alt="Small team in discussion around table">
+                            <img src="1v1.webp" alt="Small team in discussion around table" loading="lazy">
                         </div>
                         <div class="workshop-content">
                             <h3 class="workshop-title">Win the Relationship: Not the Argument</h3>
@@ -1101,7 +1155,7 @@
 
                     <div class="workshop-card">
                         <div class="workshop-image">
-                            <img src="mind.webp" alt="Speaker silhouette at sunrise with light flares">
+                            <img src="mind.webp" alt="Speaker silhouette at sunrise with light flares" loading="lazy">
                         </div>
                         <div class="workshop-content">
                             <h3 class="workshop-title">From Stage Fright to Spotlight</h3>
@@ -1113,7 +1167,7 @@
         </section>
 
         <!-- College Essay Coaching -->
-        <section class="section">
+        <section class="section" id="college-essays">
             <div class="essay-section">
                 <div class="essay-tagline">TAKE THE STRESS OUT OF COLLEGE ESSAYS.</div>
                 <p class="essay-intro">Whether you need a quick edit or full-service support, I offer tailored packages to help students craft standout essays—and get accepted.</p>
@@ -1121,7 +1175,7 @@
                 <div class="essay-packages">
                     <div class="package-card">
                         <div class="package-image">
-                            <img src="writing.webp" alt="Hand writing in notebook">
+                            <img src="writing.webp" alt="Hand writing in notebook" loading="lazy">
                         </div>
                         <div class="package-info">
                             <h3 class="package-title">Essay Essentials</h3>
@@ -1137,7 +1191,7 @@
 
                     <div class="package-card">
                         <div class="package-image">
-                            <img src="books.webp" alt="Stack of colorful books with flowers">
+                            <img src="books.webp" alt="Stack of colorful books with flowers" loading="lazy">
                         </div>
                         <div class="package-info">
                             <h3 class="package-title">Essay Accelerator</h3>
@@ -1153,7 +1207,7 @@
 
                     <div class="package-card">
                         <div class="package-image">
-                            <img src="calendar.webp" alt="Open planner with calendar and notes">
+                            <img src="calendar.webp" alt="Open planner with calendar and notes" loading="lazy">
                         </div>
                         <div class="package-info">
                             <h3 class="package-title">The Admit Plan</h3>

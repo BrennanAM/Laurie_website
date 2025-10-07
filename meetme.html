@@ -3,7 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Meet Dr. Laurie Moroco - Business & Career Coach</title>
+  <title>Meet Dr. Laurie Moroco - PhD in Communication | Career & Business Coach</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Dr. Laurie Moroco is a certified business strategist and career coach with 25+ years of experience. PhD from Duquesne University, featured in Authority Magazine, HR.com, and The American Reporter.">
+  <meta name="keywords" content="Dr Laurie Moroco, PhD, career coach, business coach, communication expert, leadership trainer, Duquesne University">
+  <meta name="author" content="Dr. Laurie Moroco">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://lauriemoroco.com/meetme.html">
+  <meta property="og:title" content="Meet Dr. Laurie Moroco - PhD & Executive Coach">
+  <meta property="og:description" content="25+ years empowering professional women. PhD in Interpersonal Communication. Featured expert in Authority Magazine and HR.com.">
+  <meta property="og:image" content="https://lauriemoroco.com/lauriecouch.webp">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://lauriemoroco.com/meetme.html">
+  <meta property="twitter:title" content="Meet Dr. Laurie Moroco - PhD & Executive Coach">
+  <meta property="twitter:description" content="25+ years empowering professional women. PhD in Interpersonal Communication.">
+  <meta property="twitter:image" content="https://lauriemoroco.com/lauriecouch.webp">
+
+  <!-- Preconnect for Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://site.lauriemoroco.com">
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     :root{
@@ -16,9 +39,16 @@
     }
     body{
       font-family: Georgia, "Times New Roman", serif;
-      line-height:1.6;color:var(--ink);overflow-x:hidden;
-      background:#fff;
+      line-height:1.7;color:var(--ink);overflow-x:hidden;
+      background:#fff;font-size:1.0625rem;
     }
+
+    /* Skip to Content Link - Accessibility */
+    .skip-link{position:absolute;top:-40px;left:0;background:#4a90a4;color:white;padding:8px 16px;text-decoration:none;z-index:10000;border-radius:0 0 4px 0;}
+    .skip-link:focus{top:0;}
+
+    /* Enhanced Focus States for Accessibility */
+    a:focus-visible,button:focus-visible{outline:3px solid #4a90a4;outline-offset:2px;}
 
     /* ====== NAV ====== */
     nav{
@@ -215,6 +245,9 @@
 </head>
 
 <body>
+  <!-- Skip to Content Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- NAV -->
     <nav>
         <div class="nav-container">
@@ -237,11 +270,11 @@
 
   <!-- HEADER -->
   <section id="meet" class="header-section">
+    <a id="main-content"></a>
     <div class="header-content">
       <!-- Perfect-circle frame that showcases the transparent logo -->
       <div class="logo-badge">
-        <!-- 🔁 Replace with your transparent PNG/SVG file -->
-        <img src="logo-1756267103807.png" alt="Dr. Laurie Moroco Logo">
+        <img src="logo-1756267103807.png" alt="Dr. Laurie Moroco Logo" loading="eager">
       </div>
 
       <h1>Meet Laurie</h1>
@@ -255,8 +288,7 @@
     <div class="content-grid">
       <!-- Profile Image -->
       <aside class="profile-section">
-        <!-- 🔁 Replace with your actual photo -->
-        <img src="lauriecouch.webp" alt="Dr. Laurie Moroco" class="profile-image">
+        <img src="lauriecouch.webp" alt="Dr. Laurie Moroco" class="profile-image" loading="eager">
       </aside>
 
       <!-- Content -->
