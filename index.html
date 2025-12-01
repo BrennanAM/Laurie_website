@@ -755,6 +755,249 @@
             }
         }
 
+        /* Holiday Flash Sale Popup */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 10000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .popup-overlay.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .popup-content {
+            background: white;
+            border-radius: 30px;
+            max-width: 550px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.4s ease;
+        }
+
+        .popup-ribbon {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+            color: white;
+            text-align: center;
+            padding: 0.8rem 1rem;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+        }
+
+        .popup-body {
+            padding: 3rem 2.5rem 2.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: rgba(44, 62, 80, 0.08);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #5a6c7d;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .popup-close:hover {
+            background: rgba(44, 62, 80, 0.15);
+            transform: rotate(90deg);
+            color: #2c3e50;
+        }
+
+        .popup-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #4a90a4 0%, #8bbbc3 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            box-shadow: 0 8px 25px rgba(74, 144, 164, 0.3);
+        }
+
+        .popup-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            line-height: 1.3;
+        }
+
+        .popup-subtitle {
+            font-size: 1.1rem;
+            color: #5a6c7d;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .popup-description {
+            font-size: 1.05rem;
+            color: #5a6c7d;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            text-align: left;
+            padding: 0 1rem;
+        }
+
+        .popup-description strong {
+            color: #2c3e50;
+        }
+
+        .popup-benefits {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 2rem;
+            padding: 0 1rem;
+        }
+
+        .popup-benefits li {
+            color: #5a6c7d;
+            margin-bottom: 0.8rem;
+            padding-left: 2rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .popup-benefits li::before {
+            content: '✓';
+            color: #4a90a4;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .popup-price {
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3f7 100%);
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .popup-price-label {
+            font-size: 0.9rem;
+            color: #5a6c7d;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .popup-price-amount {
+            font-size: 3rem;
+            color: #4a90a4;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .popup-cta {
+            background: linear-gradient(135deg, #4a90a4 0%, #8bbbc3 100%);
+            color: white;
+            padding: 1.3rem 3rem;
+            border: none;
+            border-radius: 35px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(74, 144, 164, 0.3);
+            width: 100%;
+            text-decoration: none;
+            display: block;
+        }
+
+        .popup-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(74, 144, 164, 0.4);
+        }
+
+        .popup-footer {
+            font-size: 0.85rem;
+            color: #8bbbc3;
+            margin-top: 1.5rem;
+            font-style: italic;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .popup-content {
+                border-radius: 20px;
+                max-width: 95%;
+            }
+
+            .popup-body {
+                padding: 2.5rem 1.5rem 2rem;
+            }
+
+            .popup-title {
+                font-size: 1.5rem;
+            }
+
+            .popup-subtitle {
+                font-size: 1rem;
+            }
+
+            .popup-description,
+            .popup-benefits {
+                padding: 0;
+            }
+
+            .popup-price-amount {
+                font-size: 2.5rem;
+            }
+
+            .popup-cta {
+                padding: 1.2rem 2rem;
+                font-size: 1rem;
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .hamburger {
@@ -1000,6 +1243,41 @@
         </div>
     </footer>
 
+    <!-- Holiday Flash Sale Popup -->
+    <div class="popup-overlay" id="holidayPopup">
+        <div class="popup-content">
+            <div class="popup-ribbon">🎁 HOLIDAY GIFT SPECIAL</div>
+            <div class="popup-body">
+                <button class="popup-close" onclick="closePopup()" aria-label="Close popup">×</button>
+
+                <div class="popup-icon">💡</div>
+
+                <h2 class="popup-title">Stuck on holiday gift ideas?</h2>
+                <p class="popup-subtitle">Give the gift of clarity.</p>
+
+                <p class="popup-description">
+                    A 90-minute breakthrough session for the person with a thousand ideas and zero structure.
+                </p>
+
+                <ul class="popup-benefits">
+                    <li>Validate their idea</li>
+                    <li>Define their audience</li>
+                    <li>Clarify their offer</li>
+                    <li>Leave with a simple launch plan</li>
+                </ul>
+
+                <div class="popup-price">
+                    <div class="popup-price-label">Special Holiday Price</div>
+                    <div class="popup-price-amount">$249</div>
+                </div>
+
+                <a href="https://site.lauriemoroco.com/contact" class="popup-cta" onclick="closePopup()">Gift This Session</a>
+
+                <p class="popup-footer">Perfect for aspiring entrepreneurs</p>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1075,6 +1353,49 @@
             card.style.transform = 'translateY(30px)';
             card.style.transition = `all 0.6s ease ${index * 0.1}s`;
             observer.observe(card);
+        });
+
+        // Holiday Popup Functions
+        function showPopup() {
+            const popup = document.getElementById('holidayPopup');
+            popup.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closePopup() {
+            const popup = document.getElementById('holidayPopup');
+            popup.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+
+            // Store in localStorage to not show again for 24 hours
+            const expiryTime = new Date().getTime() + (24 * 60 * 60 * 1000); // 24 hours
+            localStorage.setItem('holidayPopupClosed', expiryTime);
+        }
+
+        // Close popup when clicking outside
+        document.getElementById('holidayPopup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePopup();
+            }
+        });
+
+        // Show popup on page load
+        window.addEventListener('load', function() {
+            // Check if popup was closed in the last 24 hours
+            const popupClosed = localStorage.getItem('holidayPopupClosed');
+            const now = new Date().getTime();
+
+            if (!popupClosed || now > parseInt(popupClosed)) {
+                // Show popup after 1.5 seconds
+                setTimeout(showPopup, 1500);
+            }
+        });
+
+        // Close popup with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closePopup();
+            }
         });
     </script>
 </body>
